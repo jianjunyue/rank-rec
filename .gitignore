@@ -18,4 +18,6 @@ classes
 *.DS_Store
 out
 dump.rdb
+.settings
+*/.settings
 **/dependency-reduced-pom.xml
