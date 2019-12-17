@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strategy>
+	<list name="shopPhase" classpath="org.rank.strategy">
+		<phase name="CouponPredictPhase" />
+		<phase name="HongbaoPredictPhase" />
+	</list>
+
+<!-- 	<list name="shopWeight" classpath="org.rank.strategy.shop.weight">
+		<weight name="ShopWeight" />
+	</list> -->
+
+</strategy>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- springok1.xml -->
+<config>
+    <Field Name="restaurantid" Index="yes" Analyzed="no" Store="yes" DataType="string" Weight="0" SourceName="restaurant_id" />
+    <Field Name="shopIsNewDelivery" Index="yes" Analyzed="no" Store="yes" DataType="string" Weight="0" SourceName="shopIsNewDelivery" />
+    <Field Name="newDelivery" Index="yes" Analyzed="no" Store="yes" DataType="string" Weight="0" SourceName="newDelivery" /> 
+</config>
