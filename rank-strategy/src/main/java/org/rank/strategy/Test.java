@@ -1,11 +1,25 @@
 package org.rank.strategy;
 
+import java.util.List;
+
 import org.rank.strategy.common.StrategyConfBuilder;
+import org.rank.strategy.entity.ModuleConfiguration;
+import org.rank.strategy.shop.face.IShopPhase;
 
 public class Test {
 
 	public static void main(String[] args) throws ClassNotFoundException {
-		StrategyConfBuilder.builder();
+
+		String path = "strategy/strategy.xml"; 
+		StrategyConfBuilder builder=new StrategyConfBuilder();
+		ModuleConfiguration moduleConf = builder.build(path);
+
+		List<IShopPhase> strategyList = moduleConf.getShopPhaseList();
+		strategyList.forEach(action -> action.execute(null));
+		
+		
+		UserRealTimeIntent d=SpringContextUtil.getBean(UserRealTimeIntent.class);
+		d.extendUserIntent();
 	}
 
 }

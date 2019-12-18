@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-	<list interface="IShopPhase" classpath="org.rank.strategy.shop.phase">
+	<list interface="phase" classpath="org.rank.strategy.shop.phase">
 		<strategy name="CouponPredictPhase" />
 		<strategy name="HongbaoPredictPhase" />
 	</list>
 
-	<list interface="IShopWeight" classpath="org.rank.strategy.shop.weight">
+	<list interface="weight" classpath="org.rank.strategy.shop.weight">
 		<strategy name="ShopWeight" />
 	</list>
 </config>

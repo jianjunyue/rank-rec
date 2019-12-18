@@ -8,11 +8,11 @@ import org.rank.strategy.shop.face.IShopPhase;
 import org.rank.strategy.shop.face.IShopWeight;
 
 /**
-* 非业务策略和算法策略任务
+* 业务策略和算法策略任务
 */
 public class ModuleConfiguration {
 
-	private Module module;
+	private StrategyModule module;
 
     private Map<String, String> parameters;
 
@@ -21,11 +21,11 @@ public class ModuleConfiguration {
     private List<IShopInsert> shopInsertList;
     private List<String> rankStrategyList;
     
-    public Module getModule() {
+    public StrategyModule getModule() {
 		return module;
 	}
 
-	public void setModule(Module module) {
+	public void setModule(StrategyModule module) {
 		this.module = module;
 	}
 
