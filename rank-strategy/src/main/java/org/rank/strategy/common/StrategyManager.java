@@ -1,6 +1,8 @@
 package org.rank.strategy.common;
 
+import java.io.IOException;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.rank.strategy.entity.ModuleConfiguration;
@@ -17,8 +19,9 @@ public class StrategyManager {
 
 	private void init() {
 		StrategyConfBuilder builder = new StrategyConfBuilder();
+		Properties properties = getProperties();
 		for (StrategyModule module : StrategyModule.values()) {
-			String confPath = StrategyConfUtils.getStrategyConfPath(module);
+			String confPath = properties.getProperty(module.getModuleName());
 			if (!StringUtils.isEmpty(confPath)) {
 				ModuleConfiguration moduleConf = builder.build(confPath);
 				if (moduleConf != null) {
@@ -26,6 +29,17 @@ public class StrategyManager {
 				}
 			}
 		}
+	}
+	
+	private Properties getProperties() {
+		Properties properties = new Properties();
+		try {
+			properties.load(Thread.currentThread().getContextClassLoader()
+					.getResourceAsStream("strategy/strategy_conf.properties"));
+		} catch (IOException e) { 
+			e.printStackTrace();
+		}
+		return properties;
 	}
 	
 //	public 
