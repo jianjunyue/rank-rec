@@ -6,9 +6,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.rank.strategy.entity.ModuleConfiguration;
-import org.rank.strategy.shop.face.IShopInsert;
-import org.rank.strategy.shop.face.IShopPhase;
-import org.rank.strategy.shop.face.IShopWeight;
+import org.rank.strategy.face.IRankInsert;
+import org.rank.strategy.face.IRankPhase;
+import org.rank.strategy.face.IRankWeight;
 
 public class StrategyConfBuilder {
 
@@ -33,15 +33,15 @@ public class StrategyConfBuilder {
 		try {
 		switch (key) {
 		case "phase":
-			List<IShopPhase> shopPhaseList = buildRankStrategyList(strategys, IShopPhase.class);
+			List<IRankPhase> shopPhaseList = buildRankStrategyList(strategys, IRankPhase.class);
 			moduleConf.setShopPhaseList(shopPhaseList);
 			break;
 		case "weight":
-			List<IShopWeight> shopWeightList = buildRankStrategyList(strategys, IShopWeight.class);
+			List<IRankWeight> shopWeightList = buildRankStrategyList(strategys, IRankWeight.class);
 			moduleConf.setShopWeightList(shopWeightList);
 			break;
 		case "insert":
-			List<IShopInsert> shopInsertList = buildRankStrategyList(strategys, IShopInsert.class);
+			List<IRankInsert> shopInsertList = buildRankStrategyList(strategys, IRankInsert.class);
 			moduleConf.setShopInsertList(shopInsertList);
 			break;
 		default:

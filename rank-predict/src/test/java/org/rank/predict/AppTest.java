@@ -1,4 +1,4 @@
-package org.rank.data;
+package org.rank.predict;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -1,7 +1,7 @@
-package org.rank.strategy.shop.face;
+package org.rank.strategy.face;
 
 import org.rank.strategy.context.RankContext;
 
-public interface IShopWeight {
+public interface IRankWeight {
 	 void doWeight(RankContext context);
 }

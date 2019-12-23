@@ -3,19 +3,27 @@ package org.rank.strategy.context;
 import java.util.List;
 import java.util.Map;
 
+import org.rank.data.item.ItemInfo;
 import org.rank.strategy.context.request.RankRequest;
 import org.rank.strategy.entity.StrategyModule;
-import org.rank.strategy.entity.ModuleConfiguration;
-import org.rank.strategy.entity.ShopInfo;
+import org.rank.strategy.entity.ModuleConfiguration; 
 
 public class RankContext extends BaseContext{ 
 
 	/**
      * 原始粗排召回shop列表
      */
-	private List<ShopInfo> shopInfoList;
+	private List<ItemInfo> itemInfoList;
 	 
-    private ShopInfo[] ShopInfos;
+	public List<ItemInfo> getItemInfoList(){ return itemInfoList; }
+
+	public void setItemInfoList(List<ItemInfo> itemInfoList){ this.itemInfoList = itemInfoList; }
+
+	public ItemInfo[] getItemInfos(){ return itemInfos; }
+
+	public void setItemInfos(ItemInfo[] itemInfos){ this.itemInfos = itemInfos; }
+
+	private ItemInfo[] itemInfos;
      
     /**
      * 策略链
@@ -37,14 +45,7 @@ public class RankContext extends BaseContext{
      * 用户数据
      */
     private Map<String, Object> userProfileMap;
-
-    public List<ShopInfo> getShopInfoList(){ return shopInfoList; }
-
-	public void setShopInfoList(List<ShopInfo> shopInfoList){ this.shopInfoList = shopInfoList; }
-
-	public ShopInfo[] getShopInfos(){ return ShopInfos; }
-
-	public void setShopInfos(ShopInfo[] shopInfos){ ShopInfos = shopInfos; }
+ 
 
 	public ModuleConfiguration getStrategyConf(){ return strategyConf; }
 
@@ -65,5 +66,6 @@ public class RankContext extends BaseContext{
 	public Map<String, Object> getUserProfileMap(){ return userProfileMap; }
 
 	public void setUserProfileMap(Map<String, Object> userProfileMap){ this.userProfileMap = userProfileMap; }
+ 
 
 }

@@ -35,7 +35,7 @@ public class App {
 
 		ClassLoader cl = Thread.currentThread().getContextClassLoader();
 		URL resource = cl.getResource("strategy/strategy.json");
-		JsonNode jsonNode = ObjectMappers.INSTANCE.readTree(resource);
+		JsonNode jsonNode = null;//ObjectMappers.INSTANCE.readTree(resource);
 		Iterator<String> iterator = jsonNode.fieldNames();
 		List<String> moduleStrategyList = new ArrayList<>();
 		while (iterator.hasNext()) {
@@ -63,7 +63,7 @@ public class App {
 
 		Resource resource = applicationContext.getResource("");
 		File file = resource.getFile();
-		JsonNode jsonNode = ObjectMappers.INSTANCE.readTree(file);
+		JsonNode jsonNode = null;//ObjectMappers.INSTANCE.readTree(file);
 		Iterator<String> iterator = jsonNode.fieldNames();
 		while (iterator.hasNext()) {
 			String modeName = iterator.next();

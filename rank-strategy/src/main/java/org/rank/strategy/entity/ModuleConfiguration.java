@@ -2,9 +2,9 @@ package org.rank.strategy.entity;
 
 import java.util.List;
 
-import org.rank.strategy.shop.face.IShopInsert;
-import org.rank.strategy.shop.face.IShopPhase;
-import org.rank.strategy.shop.face.IShopWeight;
+import org.rank.strategy.face.IRankInsert;
+import org.rank.strategy.face.IRankPhase;
+import org.rank.strategy.face.IRankWeight;
 
 import com.google.common.collect.Lists;
 
@@ -13,20 +13,20 @@ import com.google.common.collect.Lists;
  */
 public class ModuleConfiguration {
 
-	private List<IShopPhase> shopPhaseList = Lists.newArrayList();
-	private List<IShopWeight> shopWeightList = Lists.newArrayList();
-	private List<IShopInsert> shopInsertList = Lists.newArrayList();
+	private List<IRankPhase> shopPhaseList = Lists.newArrayList();
+	private List<IRankWeight> shopWeightList = Lists.newArrayList();
+	private List<IRankInsert> shopInsertList = Lists.newArrayList();
 
-	public List<IShopPhase> getShopPhaseList(){ return shopPhaseList; }
+	public List<IRankPhase> getShopPhaseList(){ return shopPhaseList; }
 
-	public void setShopPhaseList(List<IShopPhase> shopPhaseList){ this.shopPhaseList = shopPhaseList; }
+	public void setShopPhaseList(List<IRankPhase> shopPhaseList){ this.shopPhaseList = shopPhaseList; }
 
-	public List<IShopWeight> getShopWeightList(){ return shopWeightList; }
+	public List<IRankWeight> getShopWeightList(){ return shopWeightList; }
 
-	public void setShopWeightList(List<IShopWeight> shopWeightList){ this.shopWeightList = shopWeightList; }
+	public void setShopWeightList(List<IRankWeight> shopWeightList){ this.shopWeightList = shopWeightList; }
 
-	public List<IShopInsert> getShopInsertList(){ return shopInsertList; }
+	public List<IRankInsert> getShopInsertList(){ return shopInsertList; }
 
-	public void setShopInsertList(List<IShopInsert> shopInsertList){ this.shopInsertList = shopInsertList; }
+	public void setShopInsertList(List<IRankInsert> shopInsertList){ this.shopInsertList = shopInsertList; }
 
 }

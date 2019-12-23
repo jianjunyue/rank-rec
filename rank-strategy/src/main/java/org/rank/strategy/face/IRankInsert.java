@@ -1,7 +1,7 @@
-package org.rank.strategy.shop.face;
+package org.rank.strategy.face;
 
 import org.rank.strategy.context.RankContext;
 
-public interface IShopInsert { 
+public interface IRankInsert { 
     void insert(RankContext context);
 }

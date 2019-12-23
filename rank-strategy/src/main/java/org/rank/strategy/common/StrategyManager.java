@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 策略模型执行
+ * 策略模型执行主流程
  */
 public class StrategyManager {
 	private static StrategyManager strategyManager = null;
