@@ -1,6 +1,6 @@
 package org.rank.data.item;
 
-public class ItemAttribute {
+public class ItemFeature {
 
 	private long itemId;
     private int saleQuantity;

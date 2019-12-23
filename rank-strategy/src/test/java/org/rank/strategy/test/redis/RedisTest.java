@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.rank.base.redis.RedisClient;
-import org.rank.data.item.ItemAttribute;
+import org.rank.data.item.ItemFeature;
 import org.rank.data.item.ItemInfo;
 import org.rank.data.search.ItemSearchService;
 import org.rank.data.user.UserPersona; 
@@ -48,7 +48,7 @@ public class RedisTest {
 
 		List<ItemInfo> itemInfoList =ItemSearchService.search();
 		itemInfoList.forEach(action->{
-			ItemAttribute itemAttribute=new ItemAttribute();
+			ItemFeature itemAttribute=new ItemFeature();
 			itemAttribute.setItemId(action.getItemId());
 			itemAttribute.setSaleQuantity((int)action.getItemId());
 

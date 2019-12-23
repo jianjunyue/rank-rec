@@ -1,5 +1,6 @@
 package org.rank.strategy.flow;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.rank.data.item.ItemInfo;
@@ -25,11 +26,14 @@ public class RankManager {
 
 			moduleConf.getShopPhaseList().stream().forEach(action -> action.execute(rankContext));
 			moduleConf.getShopWeightList().stream().forEach(action -> action.doWeight(rankContext));
-//			moduleConf.getShopInsertList().stream().forEach(action -> action.insert(rankContext));
+			moduleConf.getShopInsertList().stream().forEach(action -> action.insert(rankContext));
 			
+			rankContext.getItemInfoList().sort(Comparator.comparingDouble(ItemInfo::getScore).reversed());
 		} catch (Exception e) {
 			logger.error("RankManager run is error", e);
 		}
 	}
+	
+	
 
 }

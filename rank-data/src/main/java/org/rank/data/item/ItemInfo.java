@@ -4,10 +4,10 @@ public class ItemInfo {
 
 	private long itemId; 
 	private float score;
-	private ItemAttribute itemAttribute;
+	private ItemFeature itemAttribute;
     
-	public ItemAttribute getItemAttribute(){ return itemAttribute; }
-	public void setItemAttribute(ItemAttribute itemAttribute){ this.itemAttribute = itemAttribute; }
+	public ItemFeature getItemAttribute(){ return itemAttribute; }
+	public void setItemAttribute(ItemFeature itemAttribute){ this.itemAttribute = itemAttribute; }
 	public long getItemId(){ return itemId; }
 	public void setItemId(long itemId){ this.itemId = itemId; } 
 
