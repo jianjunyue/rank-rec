@@ -2,6 +2,7 @@ package org.rank.strategy.context;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 import org.rank.data.item.ItemInfo;
 import org.rank.strategy.context.request.RankRequest;
@@ -40,8 +41,17 @@ public class RankContext extends BaseContext{
     private StrategyModule module;
     
     private Map userProfile;
-
+    
     /**
+     * 提交召回请求，异步获取返回结果
+     * */
+    private CompletableFuture<List<ItemInfo>> asyncFuture;
+
+    public CompletableFuture<List<ItemInfo>> getAsyncFuture(){ return asyncFuture; }
+
+	public void setAsyncFuture(CompletableFuture<List<ItemInfo>> asyncFuture){ this.asyncFuture = asyncFuture; }
+
+	/**
      * 用户数据
      */
     private Map<String, Object> userProfileMap;

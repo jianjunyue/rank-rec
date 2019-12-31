@@ -2,6 +2,8 @@ package org.rank.strategy.flow;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 import org.rank.data.item.ItemInfo;
 import org.rank.data.search.ItemSearchService;
@@ -19,11 +21,12 @@ public class RankManager {
 
 	public void run(RankContext rankContext){
 		try {
-			List<ItemInfo> itemInfoList =ItemSearchService.search();
-			rankContext.setItemInfoList(itemInfoList);
+			
 			
 			ModuleConfiguration moduleConf = rankContext.getStrategyConf();
-
+			List<ItemInfo> itemInfoList=rankContext.getAsyncFuture().get(300, TimeUnit.MILLISECONDS);
+			rankContext.setItemInfoList(itemInfoList);
+			
 			moduleConf.getShopPhaseList().stream().forEach(action -> action.execute(rankContext));
 			moduleConf.getShopWeightList().stream().forEach(action -> action.doWeight(rankContext));
 			moduleConf.getShopInsertList().stream().forEach(action -> action.insert(rankContext));

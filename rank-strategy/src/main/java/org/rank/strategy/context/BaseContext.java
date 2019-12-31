@@ -1,5 +1,7 @@
 package org.rank.strategy.context;
  
+import java.time.LocalDateTime;
+
 import org.rank.data.user.UserPersona;
 import org.rank.strategy.abtest.ABInfo;
 
@@ -21,6 +23,8 @@ public class BaseContext  {
      */
     private ABInfo abInfo;
 
+	private LocalDateTime localDateTime;
+
     public String getRankId(){ return rankId; }
 
 	public void setRankId(String rankId){ this.rankId = rankId; }
@@ -39,8 +43,11 @@ public class BaseContext  {
 
 	public ABInfo getAbInfo(){ return abInfo; }
 
-	public void setAbInfo(ABInfo abInfo){ this.abInfo = abInfo; }
- 
+	public void setAbInfo(ABInfo abInfo){ this.abInfo = abInfo; } 
+    
+    public LocalDateTime getLocalDateTime(){ return localDateTime; }
+
+	public void setLocalDateTime(LocalDateTime localDateTime){ this.localDateTime = localDateTime; }
 
 
 }
